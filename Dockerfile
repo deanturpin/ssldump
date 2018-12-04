@@ -5,7 +5,7 @@ RUN apt install -y ssldump
 RUN apt install -y psmisc
 CMD \
 	# Kill the ssldump in the future or it will just sit there
-	((sleep 10s && killall ssldump)&) && \
+	((sleep 10s && killall ssldump && cat ~/dump.txt)&) && \
 
 	# Let's see what the interfaces are
 	ip a && \
@@ -16,5 +16,5 @@ CMD \
 	# Run Chromium headless in the background and open an https page
 	(SSLKEYLOGFILE=~/ssl.log chromium --no-sandbox --headless --screenshot https://github.com/deanturpin & ) && \
 
-	# Dump the TLS traffic
-	ssldump -dX -S d -i wlan0 -l ~/ssl.log 2> /dev/null
+	# Dump the TLS traffic to a file we printed in the future :)
+	ssldump -dX -S d -i wlan0 -l ~/ssl.log 2> /dev/null 1> ~/dump.txt
