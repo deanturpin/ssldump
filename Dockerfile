@@ -13,4 +13,4 @@ CMD \
 	# Run Chromium headless in the background and open an HTTPS page (hide all debug)
 	(SSLKEYLOGFILE=~/ssl.log chromium --no-sandbox --headless --screenshot https://github.com/deanturpin & ) && \
 	# Dump the TLS traffic to a file that we will print when the ssl process is killed
-	ssldump -dX -S d -i wlan0 -l ~/ssl.log 2> /dev/null 1> ~/dump.txt
+	ssldump -dX -S d -i eth0 -l ~/ssl.log 2> /dev/null 1> ~/dump.txt
