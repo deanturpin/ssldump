@@ -1,5 +1,6 @@
 Runs Chromium headless with SSLKEYLOGFILE set, opens an HTTPS page and dumps
-the decrypted TLS traffic to the terminal.
+the decrypted TLS traffic to the terminal. Also runs on [Play with
+Docker](https://labs.play-with-docker.com/).
 
 # Pull and run
 ```bash
