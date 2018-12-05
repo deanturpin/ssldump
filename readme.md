@@ -1,4 +1,7 @@
-Running ssldump with SSLKEYLOGFILE set to capture the TLS traffic. Runs Chromium headless and opens an HTTPS page so there's something interesting to log. Assumes you're connected to the network on ```wlan0```.
+Running ssldump with SSLKEYLOGFILE set to capture the TLS traffic. Runs
+Chromium headless and opens an HTTPS page so there's something interesting to
+log. It does makes assumptions about which network device is being used (eth0
+or wlan0, for instance).
 
 # Pull and run
 ```bash
