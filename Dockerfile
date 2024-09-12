@@ -11,6 +11,6 @@ CMD \
 	# Touch the key log or ssldump won't start
 	touch ~/ssl.log && \
 	# Run Chromium headless in the background and open an HTTPS page
-	(SSLKEYLOGFILE=~/ssl.log chromium --no-sandbox --headless --screenshot https://github.com & ) && \
+	(SSLKEYLOGFILE=~/ssl.log chromium --no-sandbox --headless --screenshot https://turpin.dev & ) && \
 	# Dump the TLS traffic to a file that we will print when the ssl process is killed
 	ssldump -dX -S d -i $(ip route | head -1 | cut -d' ' -f5) -l ~/ssl.log 2> /dev/null 1> ~/dump.txt
